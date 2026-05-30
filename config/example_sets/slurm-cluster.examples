@@ -1,0 +1,13 @@
+# SLURM examples selected from the provided SLURM examples list.
+GROMACS_example
+Gaussian16_example
+LAMMPS_example
+MATLAB_example
+Mathematica_example_parallel
+Mathematica_example_serial
+NAMD_example
+ORCA_example
+Python_examples
+QuantumESPRESSO_example
+R_examples
+job_submission

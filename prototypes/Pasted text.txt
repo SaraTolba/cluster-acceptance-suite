@@ -1,0 +1,143 @@
+$ module avail
+
+------------------------------------------------------------------------ /mmfs1/projects/sara.tolbaselim/modules -------------------------------------------------------------------------
+   gpu4pyscf/0.7-cuda12
+
+------------------------------------------------------------------------ /mmfs1/projects/sara.tolbaselim/modules -------------------------------------------------------------------------
+   gpu4pyscf/0.7-cuda12
+
+--------------------------------------------------------------------------------- /cm/local/modulefiles ----------------------------------------------------------------------------------
+   boost/1.77.0         cm-bios-tools    cmjob    freeipmi/1.6.8        ipmitool/1.8.18    luajit          module-git     null        openpbs/openpbs/22.05.11 (L)    python39
+   cluster-tools/9.2    cmd              dot      gcc/11.2.0     (L)    lua/5.4.6          mariadb-libs    module-info    openldap    python3                         shared
+
+--------------------------------------------------------------------------------- /cm/shared/modulefiles ---------------------------------------------------------------------------------
+   blas/gcc/64/3.10.0    cuda11.8/blas/11.8.0       gdb/10.2          hwloc2/2.7.1                      lapack/gcc/64/3.10.0          netperf/2.7.0
+   bonnie++/2.00a        cuda11.8/fft/11.8.0        hdf5/1.12.1       intel-tbb-oss/ia32/2021.4.0       mpich/ge/gcc/64/3.4.2         openblas/dynamic/0.3.18
+   cm-pmix3/3.1.7        cuda11.8/toolkit/11.8.0    hdf5_18/1.8.21    intel-tbb-oss/intel64/2021.4.0    mvapich2/gcc/64/2.3.7
+   cm-pmix4/4.1.3        default-environment        hwloc/1.11.11     iozone/3_492                      netcdf/gcc/64/gcc/64/4.8.1
+
+--------------------------------------------------------------------------------- /usr/share/modulefiles ---------------------------------------------------------------------------------
+   DefaultModules (L)
+
+-------------------------------------------------------------------------------- /mmfs1/apps/modulefiles ---------------------------------------------------------------------------------
+   BayeScan                  delly/1.2.6               (D)    llamacpp/b8973                       nvhpc/23.1_openmpi4        seqtk/1.5
+   TGS-GapCloser/1.01        dssp/4.4                         maker/3.01.04                        nvhpc/23.1                 siesta/4.1.5.intel
+   abinit/9.10.1             fastp/1.0.1                      marc2021                             nvhpc/23.7_openmpi4        singularity/3.8.0
+   adams2021                 fastqc/0.11.9                    mathematica/v14.1.0                  nvhpc/23.7                 slim/4.2.2
+   adf/2021.102              fftw/3.3.10-intel-omp-mpi        mathematica/v14.3.0           (D)    nvhpc/24.1_openmpi4        spark/3.2.0
+   adf/2021.105              fftw/3.3.10               (D)    matlab/R2023a                        nvhpc/24.1                 sqlite/3.50.4
+   adf/2022.103       (D)    fieldimager/0.3.0                matlab/R2025b                 (D)    nvhpc/25.1          (D)    stacks/2.66
+   admixture/1.3.0           fiji/20231114                    metabat/2.17                         opendronemap/2.9.1         star/2.7.11b
+   alphafold/2.2.0           finerad/0.3.2                    minimap2/2.24                 (D)    openfoam/11                tecplot/2024r1
+   anaconda3/2021.11         gatk/4.6.0.0                     minimap2/2.28                        openjdk/11                 tensor-rt/7.2.3.4
+   anaconda3/2022.05  (D)    gaussian/16-c01-avx2             mpe2/2.4.9b-mpich                    openjdk/17          (D)    tensor-rt/8.4.3.1
+   ansys/v212         (D)    gaussian/16-c02-avx2      (D)    mpe2/2.4.9b-openmpi           (D)    openjpeg/2.5.3             tensor-rt/8.6.1.6
+   ansys/v222                gaussview/6.1.1                  namd/2.14-intel-parallel-2019        openmpi/4.1.6_cuda         tensor-rt/10.0.1.6          (D)
+   aocc/4.1.0                gcc/15.2.0                       namd/3.0.1-cuda                      openmpi/4.1.8              thunder-test/DefaultModules
+   aocc/5.0.0         (D)    gffcompare/0.12.9                namd/3.0.1-gcc                (D)    openmpi/5.0.2       (D)    tophat/2.1.1
+   aocl/4.1.0                gnuplot/5.4.5                    ncurses/6.4                          orca/5.0.4                 training
+   aocl/5.0.0         (D)    go/1.19.1                        neEstimator/2.1                      orca/6.0.0                 ucx/1.14.1
+   apptainer/1.3.3           go/1.23.5                 (D)    nextflow/22.04.5                     orca/6.0.1          (D)    vasp/5.4.4.intel            (D)
+   apptainer/1.3.6           gromacs/gromaps                  nvhpc-byo-compiler/21.2              osgeo/snapshot2025         vasp/5.4.4
+   apptainer/1.4.0    (D)    gromacs/2024.2                   nvhpc-byo-compiler/21.3              parallel/20240322          vasp/6.1.0_sol.intel_omp
+   arpack/3.9.1              gromacs/2025.3            (D)    nvhpc-byo-compiler/22.3              paraview/5.9.1             vasp/6.1.0_sol.intel
+   aspera-cli/4.21.1         hdf5/1.12.1-intel                nvhpc-byo-compiler/23.1              petsc/3.23.0               vasp/6.2.1.intel_omp
+   autoconf/2.72c            hdf5/1.12.1-nvhpc-serial         nvhpc-byo-compiler/23.7              pix4dmapper/4.5.6          vasp/6.2.1.intel
+   bcftools/1.15             hdf5/1.12.1-nvhpc                nvhpc-byo-compiler/24.1              plink/2.00a5LM             vasp/6.2.1
+   bcftools/1.18             hpctoolkit/2023.03.01            nvhpc-byo-compiler/25.1       (D)    python/3.9.9               vasp/6.3.1_vtst.intel_omp
+   bcftools/1.20      (D)    htslib/1.18                      nvhpc-hpcx-cuda11/23.7               python/3.10.4              vasp/6.3.1_vtst.intel
+   bedtools/2.30.0           htslib/1.20               (D)    nvhpc-hpcx-cuda11/24.1               python/3.10.14             vasp/6.3.1.intel_omp
+   blast/2.13.0              igv/2.12.3                       nvhpc-hpcx-cuda11/25.1        (D)    python/3.11.9              vasp/6.3.1.intel
+   blast/2.16.0       (D)    imagemagick/7.1.0-47             nvhpc-hpcx-cuda12/23.7               python/3.12.2       (D)    vasp/6.3.1.nvhpc_omp_acc
+   boost/1.88.0              julia/1.7.2                      nvhpc-hpcx-cuda12/24.1               python2/2.7.18             vasp/6.3.1.nvhpc_omp
+   bowtie2/2.4.5             jumpshot/1.2.6                   nvhpc-hpcx-cuda12/25.1        (D)    qe/6.1.0-intel             vasp/6.3.1.nvhpc
+   bwa/0.7.18                lammps/02Aug2023-cpu             nvhpc-hpcx/23.1                      qe/7.3.1-libxc             vasp/6.3.2.intel_omp
+   bwa/0.7.19         (D)    lammps/02Aug2023-gpu             nvhpc-hpcx/23.7                      qe/7.4.1_gpu               vasp/6.3.2.nvhpc_omp_acc
+   bzip2/1.0.8               lammps/07Feb2024_gpu             nvhpc-hpcx/24.1                      qe/7.4.1            (D)    vasp/6.4.2.intel_omp
+   cadence/debug             lammps/22Jul2025                 nvhpc-hpcx/25.1               (D)    r/4.0.3                    vasp/6.4.2.nvhpc_omp_acc
+   cadence/2023.1     (D)    lammps/23Jun2022-intel           nvhpc-nompi/21.2                     r/4.1.0                    vasp/6.4.3.intel_omp
+   cmake/3.30.3              lammps/24Mar2022-intel           nvhpc-nompi/21.3                     r/4.2.1                    vasp/6.4.3.nvhpc_omp_acc
+   colony/2.0.7.0            lammps/27May2021-intel    (D)    nvhpc-nompi/22.3                     r/4.2.2                    vcftools/0.1.16
+   cp2k/2023.02              lftp/4.8.4                       nvhpc-nompi/23.1                     r/4.3.0                    vgl/3.1
+   cuda/11.2                 libapr/1.7.5                     nvhpc-nompi/23.7                     r/4.4.0                    vmd/1.9
+   cuda/11.4                 libffi/3.4.6                     nvhpc-nompi/24.1                     r/4.4.3                    vmd/1.9.4a55                (D)
+   cuda/12.3                 libtiff/4.7.0                    nvhpc-nompi/25.1              (D)    r/4.5.0             (D)    vsearch/2.29.0
+   cuda/12.6          (D)    libxc/devel                      nvhpc-openmpi3/24.1                  ruby/3.4.2                 wannier90/2.7.0
+   cudnn/8.4                 libxc/6.2.0                      nvhpc/21.2                           samtools/1.15              yambo/5.3
+   cudnn/8.9          (D)    libxc/7.0.0-intel                nvhpc/21.3                           samtools/1.18              z3/4.11.2
+   curl/8.9.1                libxc/7.0.0               (D)    nvhpc/22.3_openmpi4                  samtools/1.20       (D)    z3/4.12.2                   (D)
+   delly/1.1.6               libyaml/2.5.0                    nvhpc/22.3                           sas/9.4                    zlib/1.3
+
+----------------------------------------------------------------- /mmfs1/apps/modulefiles/.spack/0.16.1/linux-rhel8-zen2 -----------------------------------------------------------------
+   autoconf-archive/2019.01.06-gcc-4adz          hisat2/2.2.0-gcc-2anx                                perl-http-date/6.02-gcc-uir5                 py-opt-einsum/3.2.1-gcc-hhin
+   autoconf/2.69-gcc-buuj                        hmmer/3.3-gcc-cgp4                                   perl-http-message/6.13-gcc-3ey7              py-pandas/1.1.4-gcc-svrr
+   autoconf/2.69-intel-rtqg                      hpl/2.3-gcc-5bqu                                     perl-http-negotiate/6.01-gcc-m7o7            py-pillow/7.2.0-gcc-6jhv
+   automake/1.15.1-gcc-lfi6                      intel-parallel-studio/cluster.2018.4-gcc-rrvv        perl-io-html/1.001-gcc-axew                  py-pip/20.2-gcc-4cq2
+   automake/1.16.2-gcc-6sv4                      intel-parallel-studio/cluster.2019.5-gcc-dot5        perl-libwww-perl/6.33-gcc-3ysk               py-pkgconfig/1.5.1-gcc-vsg7
+   automake/1.16.2-intel-dbtg             (D)    intel-parallel-studio/cluster.2020.4-gcc-vcxt (D)    perl-lwp-mediatypes/6.02-gcc-mrro            py-protobuf/3.12.2-gcc-xs2a
+   bazel/3.7.2-gcc-a3fe                          interproscan/5.38-76.0-gcc-smsx                      perl-module-build-tiny/0.039-gcc-2hkj        py-pybind11/2.5.0-gcc-qyqw
+   blast-plus/2.11.0-gcc-b7ia                    jellyfish/2.2.7-gcc-dukp                             perl-module-build/0.4224-gcc-6yo4            py-pyparsing/2.4.2-gcc-mray
+   boost/1.70.0-gcc-n3e3                         libtool/2.4.6-gcc-k5ga                               perl-net-http/6.17-gcc-lzpr                  py-python-dateutil/2.8.0-gcc-rqty
+   boost/1.74.0-gcc-y5l6                         libtool/2.4.6-intel-pfba                      (D)    perl-test-needs/0.002005-gcc-j2xb            py-pytz/2020.1-gcc-cexb
+   boost/1.74.0-intel-6bnb                       libxc/2.2.2-gcc-p53n                                 perl-try-tiny/0.28-gcc-kvmr                  py-pyyaml/5.3.1-gcc-jlbi
+   bwa/0.7.17-intel-fj5m                         libxml2/2.9.10-gcc-p45b                              perl-uri/1.72-gcc-2ecb                       py-scipy/1.5.4-gcc-pgyc
+   bzip2/1.0.8-gcc-nznx                          libxml2/2.9.10-intel-ab5p                     (D)    perl-www-robotrules/6.02-gcc-p5ls            py-setuptools-scm/4.1.2-gcc-5hvz
+   bzip2/1.0.8-intel-zgjg                        libxmu/1.1.2-gcc-5arp                                perl-xml-parser/2.44-gcc-eio6                py-setuptools/50.3.2-gcc-rqut
+   canu/2.0-gcc-62v6                             libxscrnsaver/1.2.2-gcc-6dji                         perl/5.32.0-gcc-vswq                         py-six/1.14.0-gcc-al2p
+   charmpp/6.10.2-gcc-yhg3                       llvm/11.0.1-gcc-5r7v                                 perl/5.32.0-intel-jmtl                (D)    py-termcolor/1.1.0-gcc-pgyr
+   clustalw/2.1-gcc-rg27                         llvm/11.0.1-gcc-6sdx                          (D)    petsc/3.14.1-gcc-fn73                        py-theano/1.0.4-gcc-slh5
+   cmake/3.18.4-gcc-vo7y                         masurca/3.3.1-gcc-okn4                               pixman/0.40.0-gcc-qg23                       py-typing-extensions/3.7.4-gcc-wuk2
+   cmake/3.18.4-intel-n43d                       maven/3.6.3-gcc-5r3g                                 pkgconf/1.7.3-gcc-bfe5                       py-virtualenv/16.7.6-gcc-cvq6
+   cpio/2.13-gcc-5koe                            mpich/3.3.2-gcc-dfkh                                 pkgconf/1.7.3-intel-6ois              (D)    py-wheel/0.34.2-gcc-62h2
+   cuda/10.1.243-gcc-gwzo                        mvapich2/2.3.4-gcc-fmai                              py-absl-py/0.7.1-gcc-5hls                    py-wrapt/1.11.2-gcc-6hl7
+   cuda/10.2.89-gcc-bjtv                         namd/2.15a1-gcc-czax                                 py-astunparse/1.6.3-gcc-ewop                 python/3.8.6-gcc-2pmf
+   cuda/11.0.2-gcc-dayq                          netcdf-c/4.7.4-gcc-b53f                              py-bottleneck/1.2.1-gcc-5fhc                 python/3.8.6-intel-uly7
+   cuda/11.1.0-gcc-ovkh                          netcdf-cxx/4.2-gcc-hhn3                              py-cached-property/1.5.2-gcc-jb3z            python/3.8.6-lmod
+   cudnn/8.0.4.30-11.0-linux-x64-gcc-oy5z        netlib-scalapack/2.1.0-gcc-ce77                      py-certifi/2020.6.20-gcc-b4zc                quantum-espresso/6.6-gcc-w4hr
+   cufflinks/2.2.1-gcc-k4kj                      nwchem/7.0.2-gcc-pove                                py-cycler/0.10.0-gcc-jm7c                    randfold/2.0.1-gcc-4t6a
+   curl/7.72.0-gcc-rdbq                          openbabel/3.0.0-gcc-bulr                             py-cython/0.29.21-gcc-3mya                   relion/3.0.8-gcc-unye
+   diamond/2.0.4-gcc-jefl                        openblas/0.3.12-gcc-ozlq                             py-docutils/0.15.2-gcc-s6oe                  scrnsaverproto/1.2.2-gcc-7qzb
+   fastuniq/1.1-gcc-ml22                         opencv/4.2.0-gcc-bz7z                                py-gast/0.3.3-gcc-yv4j                       spark/2.3.0-gcc-fhmj
+   ffmpeg/4.2.2-gcc-sr35                         openjdk/1.8.0_222-b10-gcc-uqhc                       py-google-pasta/0.1.8-gcc-w3eq               sqlite/3.33.0-gcc-doiu
+   fftw/3.3.8-gcc-3ylo                           openjdk/11.0.2-gcc-22a5                              py-grpcio/1.32.0-gcc-bxic                    sqlite/3.33.0-intel-grge
+   flatbuffers/1.12.0-gcc-ahmh                   openmpi/3.1.6-gcc-sxqy                               py-h5py/2.10.0-gcc-ku5k                      squashfs/4.4-gcc-krst
+   flex/2.6.4-gcc-ovfc                           packmol/18.169-gcc-kzfk                              py-keras-applications/1.0.8-gcc-vome         squid/1.9g-gcc-7t2p
+   fltk/1.3.3-gcc-z2mt                           parallel/20200822-gcc-eewe                           py-keras-preprocessing/1.1.2-gcc-2esc        star/2.7.6a-gcc-oxcd
+   font-util/1.3.2-gcc-3ymz                      perl-data-dumper/2.173-gcc-jesx                      py-keras/2.2.4-gcc-atrp                      stringtie/1.3.4d-gcc-mhed
+   gatk/4.1.8.1-gcc-2onk                         perl-encode-locale/1.05-gcc-sl4u                     py-kiwisolver/1.1.0-gcc-uxn6                 tk/8.6.10-gcc-sbu6
+   gcc/10.2.0-gcc-an6m                           perl-extutils-config/0.008-gcc-c5rj                  py-mako/1.0.4-gcc-jahw                       transrate/1.0.3-gcc-soly
+   git/2.29.0-gcc-pgif                           perl-extutils-helpers/0.026-gcc-ytrs                 py-markupsafe/1.1.1-gcc-52oq                 trimmomatic/0.39-gcc-mwzr
+   gnuplot/5.2.8-gcc-exei                        perl-extutils-installpaths/0.012-gcc-zs4n            py-matplotlib/3.3.3-gcc-y7tg                 valgrind/3.15.0-gcc-5wha
+   go/1.15.2-gcc-uiiu                            perl-file-listing/6.04-gcc-stoo                      py-mpi4py/3.0.3-gcc-t3cq                     vcftools/0.1.14-gcc-rz3q
+   gromacs/2020.4-gcc-xbjy                       perl-html-parser/3.72-gcc-dh33                       py-nose/1.3.7-gcc-irfg                       velvet/1.2.10-gcc-gprg
+   gsl/2.5-gcc-jeyl                              perl-html-tagset/3.20-gcc-j3tr                       py-numexpr/2.7.0-gcc-7cox
+   hdf5/1.10.7-gcc-bbcp                          perl-http-cookies/6.04-gcc-o4gq                      py-numpy/1.18.5-gcc-qrtw
+   hdf5/1.10.7-gcc-vdbz                          perl-http-daemon/6.01-gcc-aumr                       py-numpy/1.19.4-gcc-72fm              (D)
+
+-------------------------------------------------------------------------- /mmfs1/apps/intel/oneapi/modulefiles --------------------------------------------------------------------------
+   advisor/latest                dal/2023.0.0                   dpl/2021.2.0                      intel_ippcp_ia32/2021.6.3           mpi/2021.10.0    (D)
+   advisor/2023.2.0       (D)    dal/2023.2.0            (D)    dpl/2021.6.0                      intel_ippcp_ia32/2021.8.0    (D)    oclfpga/latest
+   ccl/latest                    debugger/latest                dpl/2022.0.0                      intel_ippcp_intel64/latest          oclfpga/2021.2.0
+   ccl/2021.2.0                  debugger/10.1.1                dpl/2022.2.0               (D)    intel_ippcp_intel64/2021.2.0        oclfpga/2022.0.2
+   ccl/2021.5.1                  debugger/2021.5.0              icc/2022.0.2                      intel_ippcp_intel64/2021.5.1        oclfpga/2023.0.0
+   ccl/2021.8.0                  debugger/2023.0.0              icc/2023.0.0               (D)    intel_ippcp_intel64/2021.6.3        oclfpga/2023.2.0 (D)
+   ccl/2021.10.0          (D)    debugger/2023.2.0       (D)    icc32/2022.0.2                    intel_ippcp_intel64/2021.8.0 (D)    tbb/latest
+   clck/latest                   dev-utilities/latest           icc32/2023.0.0             (D)    itac/latest                         tbb/2021.2.0
+   clck/2021.2.0                 dev-utilities/2021.2.0         init_opencl/2021.2.0              itac/2021.2.0                       tbb/2021.5.1
+   clck/2021.5.0                 dev-utilities/2021.5.2         init_opencl/2022.0.2              itac/2021.5.0                       tbb/2021.8.0
+   clck/2021.7.2          (D)    dev-utilities/2021.8.0         init_opencl/2023.0.0       (D)    itac/2021.8.0                       tbb/2021.10.0    (D)
+   compiler-rt/2021.2.0          dev-utilities/2021.10.0 (D)    inspector/latest                  itac/2021.10.0               (D)    tbb32/latest
+   compiler-rt/2022.0.2          dnnl-cpu-gomp/latest           inspector/2023.2.0         (D)    mkl/latest                          tbb32/2021.2.0
+   compiler-rt/2023.0.0   (D)    dnnl-cpu-gomp/2023.2.0  (D)    intel_ipp_ia32/latest             mkl/2021.2.0                        tbb32/2021.5.1
+   compiler-rt32/2021.2.0        dnnl-cpu-iomp/latest           intel_ipp_ia32/2021.2.0           mkl/2022.0.2                        tbb32/2021.8.0
+   compiler-rt32/2022.0.2        dnnl-cpu-iomp/2023.2.0  (D)    intel_ipp_ia32/2021.5.2           mkl/2023.0.0                        tbb32/2021.10.0  (D)
+   compiler-rt32/2023.0.0 (D)    dnnl-cpu-tbb/latest            intel_ipp_ia32/2021.7.0           mkl/2023.2.0                 (D)    vpl/latest
+   compiler/2021.2.0             dnnl-cpu-tbb/2023.2.0   (D)    intel_ipp_ia32/2021.9.0    (D)    mkl32/latest                        vpl/2021.2.2
+   compiler/2022.0.2             dnnl/latest                    intel_ipp_intel64/latest          mkl32/2021.2.0                      vpl/2022.0.0
+   compiler/2023.0.0      (D)    dnnl/2023.2.0           (D)    intel_ipp_intel64/2021.2.0        mkl32/2022.0.2                      vpl/2023.0.0     (D)
+   compiler32/2021.2.0           dpct/latest                    intel_ipp_intel64/2021.5.2        mkl32/2023.0.0                      vtune/latest
+   compiler32/2022.0.2           dpct/2021.2.0                  intel_ipp_intel64/2021.7.0        mkl32/2023.2.0               (D)    vtune/2023.2.0   (D)
+   compiler32/2023.0.0    (D)    dpct/2022.0.0                  intel_ipp_intel64/2021.9.0 (D)    mpi/latest
+   dal/latest                    dpct/2023.0.0                  intel_ippcp_ia32/latest           mpi/2021.2.0
+   dal/2021.2.0                  dpct/2023.2.0           (D)    intel_ippcp_ia32/2021.2.0         mpi/2021.5.1
+   dal/2021.5.3                  dpl/latest                     intel_ippcp_ia32/2021.5.1         mpi/2021.8.0

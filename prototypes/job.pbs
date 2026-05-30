@@ -1,0 +1,38 @@
+#!/bin/bash
+#PBS -q default
+#PBS -N node
+#PBS -j oe
+#PBS -l select=1:ncpus=1:mpiprocs=1:mem=1GB
+#PBS -l walltime=01:00:00
+#PBS -W group_list=x-ccast-prj-khoang
+
+echo "Running on host: $(hostname)"
+echo "Running on host: $(NODE)"
+cd $PBS_O_WORKDIR
+
+# List available modules
+module avail
+
+# Load the VMD module
+module load vmd
+
+# Check the loaded VMD module
+module list
+
+# Load the ESPRESSO, intel, namd module
+module load espresso
+module load intel/2018.2.046
+module load NAMD/2.12-intel
+
+# Check the loaded ESPRESSO module
+module list
+
+# Print the job ID
+echo "Job ID: $PBS_JOBID"
+
+
+# Print the path to the Python executable
+which python
+
+
+exit 0

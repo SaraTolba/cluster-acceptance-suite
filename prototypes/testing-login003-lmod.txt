@@ -1,0 +1,21 @@
+# Testing Lmod:
+
+    MODULE 							ISSUE
+    
+cuda-dcgm/3.1.3.1				doesn't exist
+
+namd/3.0.1-gcc					depends on openmpi/mlnx/gcc/64
+
+oclfpga/<version> 				"::env(INTELFPGAOCLSDKROOT)": no such variable						
+
+OpenMP/minx/GCC/64/				doesn't exist
+
+wannier90/						depends on openmpi/mlnx/gcc/64
+
+yambo/5.3						depends on openmpi/mlnx/gcc/64
+
+----------------------------
+
+env var:
+
+No issue with famous onces 

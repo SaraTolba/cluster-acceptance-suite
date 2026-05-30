@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH --job-name=cP_node_test
+#SBATCH --partition=compute
+#SBATCH --nodes=2
+#SBATCH --ntasks=4
+#SBATCH --ntasks-per-node=2
+#SBATCH --mem=1G
+#SBATCH --time=00:05:00
+#SBATCH --account=x-ccast-prj-khoang
+
+cd $SLURM_SUBMIT_DIR
+
+#sleep check to make sure environment sets up
+sleep 30
+
+
+echo "Hello from $(hostname)"
+
+echo "I am running on $SLURM_NTASKS CPU cores"
+
+echo "I am set for $SLURM_NNODES nodes."
+
+module load mvapich/4.1
+#this does need to be loaded for c++ libraries to work
+module load compiler/2025.3.0
+
+module reload slurm
+sleep 15
+
+mpicxx test_mpi.cpp -o x
+
+echo "Now executing job."
+#srun -p compute -N 2 --ntasks-per-node=2 --mem=1G a.out
+srun -N $SLURM_NNODES --ntasks-per-node=$SLURM_NTASKS_PER_NODE ./x
+#mpiexec -np $SLURM_NTASKS ./x
+echo "Job execution complete."
+#rest set up
+sleep 15
+
+

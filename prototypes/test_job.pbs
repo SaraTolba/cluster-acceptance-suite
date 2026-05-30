@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -N test_job
+#PBS -q default 
+#PBS -l walltime=00:10:00
+#PBS -l select=2:ncpus=4:mpiprocs=2:ompthreads=2:mem=2gb
+#PBS -j oe 
+#PBS -o test_job_output.log
+#PBS -W group_list=x-ccast-prj
+
+## Test job for hybrid MPI/OpenMP comms 
+export OMP_STACKSIZE=512m
+
+## Optional: debug flags (incredibly verbose)
+#export I_MPI_DEBUG=10
+#export I_MPI_HYDRA_DEBUG=on
+
+cd $PBS_O_WORKDIR
+
+module load intel-parallel-studio
+
+export NUM_PROC=`cat $PBS_NODEFILE | wc -l`
+
+mpiexec -machinefile $PBS_NODEFILE -np $NUM_PROC ./hello_hybrid_omp_mpi 
+ 
+exit 0

@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --job-name={{JOB_NAME}}
+#SBATCH --partition={{SLURM_PARTITION}}
+#SBATCH --account={{SLURM_ACCOUNT}}
+#SBATCH --nodes={{NODES}}
+#SBATCH --ntasks={{NTASKS}}
+#SBATCH --ntasks-per-node={{NTASKS_PER_NODE}}
+#SBATCH --cpus-per-task={{CPUS_PER_TASK}}
+#SBATCH --mem={{MEM}}
+#SBATCH --time={{TIME}}
+#SBATCH --output={{LOG_FILE}}
+#SBATCH --error={{ERR_FILE}}
+
+cd "$SLURM_SUBMIT_DIR" || exit 1
+
+echo "cluster={{CLUSTER_NAME}}"
+echo "scheduler=slurm"
+echo "job_id=$SLURM_JOB_ID"
+echo "host=$(hostname)"
+echo "date=$(date)"
+echo "ulimit_n=$(ulimit -n)"
+
+{{TEST_BODY}}

@@ -1,0 +1,14 @@
+# PBS examples selected from /mmfs1/projects/ccastest/examples.
+# Lines beginning with # are ignored.
+C_example
+Python_examples
+R_examples
+GROMACS_examples
+LAMMPS_22Jul2025_example
+NAMD_3.0.1_example
+QuantumESPRESSO7.3.1_example
+Gaussian16
+MATLAB_example
+Mathematica_example_serial
+ORCA_example
+job_submission

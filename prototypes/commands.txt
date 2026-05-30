@@ -1,0 +1,4 @@
+COMMANDS:
+module -t avail 2>&1 | grep -i python
+module -t avail
+module -t avail 2>&1 | awk '!/^\//'
