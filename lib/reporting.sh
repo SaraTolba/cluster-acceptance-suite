@@ -6,13 +6,13 @@ init_reporting() {
   SUMMARY_MD="$RUN_DIR/acceptance_summary.md"
   export RESULTS_CSV SUMMARY_MD
   if [ ! -f "$RESULTS_CSV" ]; then
-    printf 'run_id,cluster,scheduler,test_id,test_type,scope,node,job_id,status,reason,started_at,ended_at,elapsed_sec,log_path\n' > "$RESULTS_CSV"
+    printf 'run_id,cluster,scheduler,test_id,test_type,scope,node,job_id,status,reason,started_at,ended_at,elapsed_sec,log_path,command\n' > "$RESULTS_CSV"
   fi
 }
 
 csv_escape() {
   local value="${1:-}"
-  value=${value//"/""}
+  value=${value//"/"\"\"}
   printf '"%s"' "$value"
 }
 
@@ -28,6 +28,7 @@ record_result() {
   local ended_at="${9:-}"
   local elapsed_sec="${10:-}"
   local log_path="${11:-}"
+  local command="${12:-${CURRENT_COMMAND:-}}"
 
   : "${RESULTS_CSV:?RESULTS_CSV not set; call init_reporting}"
   {
@@ -44,7 +45,8 @@ record_result() {
     csv_escape "$started_at"; printf ','
     csv_escape "$ended_at"; printf ','
     csv_escape "$elapsed_sec"; printf ','
-    csv_escape "$log_path"; printf '\n'
+    csv_escape "$log_path"; printf ','
+    csv_escape "$command"; printf '\n'
   } >> "$RESULTS_CSV"
 
   printf '%-8s %-35s %s\n' "$status" "$test_id" "$reason"
@@ -68,12 +70,34 @@ render_summary() {
     overall="WARN"
   fi
 
+  local commands_section
+  commands_section=$(python3 - "$RESULTS_CSV" <<'PY'
+import csv, sys
+path = sys.argv[1]
+with open(path, newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    if not reader.fieldnames or 'test_id' not in reader.fieldnames or 'command' not in reader.fieldnames:
+        sys.exit(0)
+    rows = []
+    for row in reader:
+        command = row.get('command') or ''
+        if not command:
+            continue
+        test_id = row.get('test_id', '')
+        rows.append(f"- `{test_id}`: `{command}`")
+    if not rows:
+        sys.exit(0)
+    print('## Commands')
+    print('\n'.join(rows))
+PY
+  ) || true
+
   cat > "$SUMMARY_MD" <<EOF2
 # Cluster Acceptance Summary
 
-- Run ID: \\`$RUN_ID\\`
-- Cluster: \\`$CLUSTER_NAME\\`
-- Scheduler: \\`$SCHEDULER\\`
+- Run ID: \`$RUN_ID\`
+- Cluster: \`$CLUSTER_NAME\`
+- Scheduler: \`$SCHEDULER\`
 - Overall: **$overall**
 
 ## Counts
@@ -89,9 +113,13 @@ render_summary() {
 
 ## Result file
 
-- CSV: \\`$RESULTS_CSV\\`
+- CSV: \`$RESULTS_CSV\`
 
 EOF2
+
+  if [ -n "$commands_section" ]; then
+    printf '%s\n' "$commands_section" >> "$SUMMARY_MD"
+  fi
 
   echo "Summary written to $SUMMARY_MD"
   [ "$overall" = "FAIL" ] && return 1

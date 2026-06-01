@@ -16,7 +16,7 @@ run_sanity() {
   )
   for t in "${tests[@]}"; do
     echo "Running $(basename "$t")"
-    bash "$t" || true
+    CURRENT_COMMAND="bash $t" bash "$t" || true
   done
   if [ "${RUN_NODE_MODULE_CHECK:-0}" = "1" ]; then
     bash "$ROOT_DIR/sanity/check_module_loads_per_node.sh" || true

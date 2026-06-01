@@ -14,7 +14,7 @@ run_workloads() {
   )
   for t in "${tests[@]}"; do
     echo "Running $(dirname "$t" | xargs basename)"
-    bash "$t" || true
+    CURRENT_COMMAND="bash $t" bash "$t" || true
   done
 }
 

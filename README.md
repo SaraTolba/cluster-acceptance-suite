@@ -11,7 +11,9 @@ This suite is designed around one shared codebase and separate cluster configura
 
 ## Test account
 
-The generated job scripts use the shared test project/account values from the cluster config files:
+The generated job scripts use the shared test project/account values from the selected cluster config file.
+
+The cluster key passed to `--cluster` must match a file in `config/clusters/`, for example `prime-pbs-cluster.env` or `thunder-slurm-cluster.env`.
 
 ```bash
 #SBATCH --account=x-ccast-prj-
@@ -27,18 +29,26 @@ From the repository root on the target cluster:
 ```bash
 chmod +x runners/*.sh sanity/*.sh workloads/*/*.sh
 
-# PBS cluster
-./runners/run_all.sh --cluster thunder-pbs --mode sanity
+# PBS cluster sanity checks
+./runners/run_all.sh --cluster prime-pbs-cluster --mode sanity
 
-# SLURM cluster
-./runners/run_all.sh --cluster slurm-cluster --mode sanity
+# SLURM cluster sanity checks
+./runners/run_all.sh --cluster thunder-slurm-cluster --mode sanity
 ```
 
 For a dry run that creates job files but does not submit them:
 
 ```bash
-./runners/run_all.sh --cluster thunder-pbs --mode all --dry-run
-./runners/run_all.sh --cluster slurm-cluster --mode all --dry-run
+./runners/run_all.sh --cluster prime-pbs-cluster --mode all --dry-run
+./runners/run_all.sh --cluster thunder-slurm-cluster --mode all --dry-run
+```
+
+Run a specific workload case:
+
+```bash
+./runners/run_all.sh --cluster prime-pbs-cluster --mode examples --dry-run
+./runners/run_all.sh --cluster prime-pbs-cluster --mode mpi-hello
+./runners/run_all.sh --cluster prime-pbs-cluster --mode module-heavy
 ```
 
 ## Main folders
@@ -69,4 +79,6 @@ For a dry run that creates job files but does not submit them:
 4. Run workloads mode.
 5. Enable example submission only after reviewing the example configs.
 
-The example-folder workload is conservative by default: it discovers example folders and job scripts. Set `EXAMPLE_RUN_MODE="submit"` in the cluster config if you want it to copy and submit example jobs.
+The example-folder workload is conservative by default: it discovers example folders and job scripts. Set `EXAMPLE_RUN_MODE="submit"` in the cluster config if you want it to copy selected examples from `EXAMPLES_ROOT` into the local run workspace (`reports/<cluster>/<run_id>/work/examples/`) and submit them from there.
+
+This suite does not execute jobs directly in the source `EXAMPLES_ROOT` path; it copies what it needs into scratch first.

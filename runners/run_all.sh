@@ -8,11 +8,13 @@ source "$ROOT_DIR/runners/run_workloads.sh"
 
 usage() {
   cat <<EOF2
-Usage: $0 --cluster <cluster-key> [--mode all|sanity|workloads] [--dry-run] [--run-id ID]
+Usage: $0 --cluster <cluster-key> [--mode all|sanity|workloads|examples|mpi-hello|openmp-hello|hybrid-mpi-openmp|module-heavy] [--dry-run] [--run-id ID]
 
 Examples:
-  $0 --cluster thunder-pbs --mode sanity
-  $0 --cluster slurm-cluster --mode all --dry-run
+  $0 --cluster prime-pbs-cluster --mode sanity
+  $0 --cluster thunder-slurm-cluster --mode all --dry-run
+  $0 --cluster prime-pbs-cluster --mode examples --dry-run
+  $0 --cluster prime-pbs-cluster --mode mpi-hello
 EOF2
 }
 
@@ -47,12 +49,44 @@ dry_run=$DRY_RUN
 started_at=$(date '+%Y-%m-%dT%H:%M:%S')
 EOF2
 
+run_mode() {
+  local mode_string="$1"
+  local IFS=','
+  read -ra modes <<< "$mode_string"
+  for m in "${modes[@]}"; do
+    case "$m" in
+      sanity) run_sanity ;;
+      workloads) run_workloads ;;
+      examples)
+        echo "Running examples workload"
+        bash "$ROOT_DIR/workloads/examples_smoke/run.sh" || true
+        ;;
+      mpi-hello)
+        echo "Running MPI hello workload"
+        bash "$ROOT_DIR/workloads/mpi_hello/run.sh" || true
+        ;;
+      openmp-hello)
+        echo "Running OpenMP hello workload"
+        bash "$ROOT_DIR/workloads/openmp_hello/run.sh" || true
+        ;;
+      hybrid-mpi-openmp)
+        echo "Running hybrid MPI/OpenMP workload"
+        bash "$ROOT_DIR/workloads/hybrid_mpi_openmp/run.sh" || true
+        ;;
+      module-heavy)
+        echo "Running module-heavy smoke workload"
+        bash "$ROOT_DIR/workloads/module_heavy_smoke/run.sh" || true
+        ;;
+      all)
+        run_sanity
+        run_workloads
+        ;;
+      *) die "Unknown mode: $m" ;;
+    esac
+  done
+}
+
 echo "Run directory: $RUN_DIR"
-case "$mode" in
-  sanity) run_sanity ;;
-  workloads) run_workloads ;;
-  all) run_sanity; run_workloads ;;
-  *) die "Unknown mode: $mode" ;;
-esac
+run_mode "$mode"
 
 render_summary

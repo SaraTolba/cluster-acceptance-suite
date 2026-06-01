@@ -31,10 +31,11 @@ load_cluster_config() {
   CLUSTER_KEY="$cluster_key"
   CONFIG_FILE="$ROOT_DIR/config/clusters/${cluster_key}.env"
   [ -f "$CONFIG_FILE" ] || die "Cluster config not found: $CONFIG_FILE"
+  set -a
   # shellcheck disable=SC1090
   source "$CONFIG_FILE"
+  set +a
   export ROOT_DIR CLUSTER_KEY CONFIG_FILE
-  export CLUSTER_NAME SCHEDULER TEST_ACCOUNT
 }
 
 make_run_dir() {
