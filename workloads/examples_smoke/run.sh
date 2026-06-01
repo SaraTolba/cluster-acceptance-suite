@@ -6,7 +6,19 @@ source "$ROOT_DIR/lib/reporting.sh"
 source "$ROOT_DIR/lib/scheduler_pbs.sh"
 source "$ROOT_DIR/lib/scheduler_slurm.sh"
 
-error_keywords=("forrtl" "error" "severe" "failed" "exception" "illegal" "fault" "segmentation fault" "abort" "fatal" "Dependencies are missing")
+error_keywords=(
+  "forrtl"
+  "\\berror(s)?\\b"
+  "\\bsevere\\b"
+  "\\bfailed\\b"
+  "\\bexception\\b"
+  "\\billegal\\b"
+  "\\bfault\\b"
+  "segmentation fault"
+  "\\babort\\b"
+  "\\bfatal\\b"
+  "Dependencies are missing"
+)
 
 collect_job_log_files() {
   local job_id="$1"
@@ -56,7 +68,7 @@ scan_job_logs_for_errors() {
     [ -n "$file" ] || continue
     [ -f "$file" ] || continue
     for keyword in "${error_keywords[@]}"; do
-      if grep -iq -- "$keyword" "$file" 2>/dev/null; then
+      if grep -Eqi -- "$keyword" "$file" 2>/dev/null; then
         printf '%s:%s\n' "$keyword" "$file"
         return 0
       fi

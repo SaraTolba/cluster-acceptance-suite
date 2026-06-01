@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -N {{JOB_NAME}}
+#PBS -q {{PBS_QUEUE}}
+#PBS -W group_list={{PBS_GROUP_LIST}}
+#PBS -l select={{PBS_SELECT_GPU}}
+#PBS -l walltime={{WALLTIME}}
+#PBS -j oe
+#PBS -o {{LOG_FILE}}
+
+cd "$PBS_O_WORKDIR" || exit 1
+
+echo "cluster={{CLUSTER_NAME}}"
+echo "scheduler=pbs"
+echo "job_id=$PBS_JOBID"
+echo "host=$(hostname)"
+echo "date=$(date)"
+echo "ulimit_n=$(ulimit -n)"
+
+{{TEST_BODY}}

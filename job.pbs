@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N MyFirstJob
+#PBS -q preemptible
+#PBS -l select=1:ncpus=1:mem=1gb
+#PBS -l walltime=72:00:00
+#PBS -W group_list=x-ccast-prj-tolbasel
+
+cd $PBS_O_WORKDIR
+
+sleep 10
+
+./runners/run_all.sh --cluster prime-pbs-cluster --mode all 
+
+sleep 10
+
+exit 0
