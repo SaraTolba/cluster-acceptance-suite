@@ -51,6 +51,10 @@ Run a specific workload case:
 ./runners/run_all.sh --cluster prime-pbs-cluster --mode module-heavy
 ```
 
+### PBS GPU template
+
+A GPU-specific PBS job template is now available at `templates/pbs/gpu_job.pbs.template`. It uses the `PBS_SELECT_GPU` setting from the cluster config to request `ngpus=1` and the correct GPU node resources.
+
 ## Main folders
 
 - `config/` - per-cluster settings, expected limits, required modules, known issue rules, and example-folder lists.
