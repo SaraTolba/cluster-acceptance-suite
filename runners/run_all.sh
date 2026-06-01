@@ -8,13 +8,14 @@ source "$ROOT_DIR/runners/run_workloads.sh"
 
 usage() {
   cat <<EOF2
-Usage: $0 --cluster <cluster-key> [--mode all|sanity|workloads|examples|mpi-hello|openmp-hello|hybrid-mpi-openmp|module-heavy] [--dry-run] [--run-id ID]
+Usage: $0 --cluster <cluster-key> [--mode all|sanity|workloads|examples|mpi-hello|openmp-hello|hybrid-mpi-openmp|module-heavy|gpu-node-smoke] [--dry-run] [--run-id ID]
 
 Examples:
   $0 --cluster prime-pbs-cluster --mode sanity
   $0 --cluster thunder-slurm-cluster --mode all --dry-run
   $0 --cluster prime-pbs-cluster --mode examples --dry-run
   $0 --cluster prime-pbs-cluster --mode mpi-hello
+  $0 --cluster prime-pbs-cluster --mode gpu-node-smoke
 EOF2
 }
 
@@ -76,6 +77,10 @@ run_mode() {
       module-heavy)
         echo "Running module-heavy smoke workload"
         bash "$ROOT_DIR/workloads/module_heavy_smoke/run.sh" || true
+        ;;
+      gpu-node-smoke)
+        echo "Running GPU node smoke workload"
+        bash "$ROOT_DIR/workloads/gpu_node_smoke/run.sh" || true
         ;;
       all)
         run_sanity

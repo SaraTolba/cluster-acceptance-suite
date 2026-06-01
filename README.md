@@ -49,6 +49,7 @@ Run a specific workload case:
 ./runners/run_all.sh --cluster prime-pbs-cluster --mode examples --dry-run
 ./runners/run_all.sh --cluster prime-pbs-cluster --mode mpi-hello
 ./runners/run_all.sh --cluster prime-pbs-cluster --mode module-heavy
+./runners/run_all.sh --cluster prime-pbs-cluster --mode gpu-node-smoke
 ```
 
 ### PBS GPU template

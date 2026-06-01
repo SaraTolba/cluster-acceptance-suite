@@ -10,6 +10,7 @@ run_workloads() {
     "$ROOT_DIR/workloads/openmp_hello/run.sh"
     "$ROOT_DIR/workloads/hybrid_mpi_openmp/run.sh"
     "$ROOT_DIR/workloads/module_heavy_smoke/run.sh"
+    "$ROOT_DIR/workloads/gpu_node_smoke/run.sh"
     "$ROOT_DIR/workloads/examples_smoke/run.sh"
   )
   for t in "${tests[@]}"; do
