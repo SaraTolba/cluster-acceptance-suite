@@ -1,0 +1,25 @@
+# Job output files
+*.e[0-9]*
+*.o[0-9]*
+MyFirstJob.*
+
+# Generated reports and results
+reports/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor and IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+.tmp/

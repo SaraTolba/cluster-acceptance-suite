@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -u
+set -euo pipefail
 ROOT_DIR="${ROOT_DIR:-$(cd "$(dirname "$0")/.." && pwd)}"
 source "$ROOT_DIR/lib/common.sh"
 source "$ROOT_DIR/lib/reporting.sh"

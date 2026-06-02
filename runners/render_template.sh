@@ -10,7 +10,9 @@ template="$1"
 outfile="$2"
 body_file="$3"
 
-tmp="${outfile}.tmp"
+tmp=$(mktemp) || { echo "Failed to create temp file" >&2; exit 1; }
+trap "rm -f '$tmp'" EXIT
+
 awk -v body="$body_file" '
   /\{\{TEST_BODY\}\}/ {
     while ((getline line < body) > 0) print line

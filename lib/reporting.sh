@@ -12,7 +12,12 @@ init_reporting() {
 
 csv_escape() {
   local value="${1:-}"
-  value=${value//"/"\"\"}
+  # Escape double quotes by doubling them
+  value=${value//\"/\"\"}
+  # Remove newlines to avoid CSV line breaks
+  value=${value//$'\n'/\\n}
+  value=${value//$'\r'/\\r}
+  # Wrap in quotes
   printf '"%s"' "$value"
 }
 

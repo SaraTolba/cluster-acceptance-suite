@@ -38,6 +38,7 @@ done
 [ -n "$cluster" ] || { usage; exit 2; }
 export DRY_RUN RUN_ID ROOT_DIR
 load_cluster_config "$cluster"
+validate_required_config_vars
 make_run_dir
 init_reporting
 
